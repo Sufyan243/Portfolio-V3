@@ -200,7 +200,7 @@ export default function Home() {
                   key={s.name}
                   className="group bg-background hover:bg-bg2 px-4 py-7 flex flex-col items-center gap-[10px] cursor-default transition-colors duration-200 relative overflow-hidden"
                 >
-                  <img src={s.icon} alt={s.name} className="w-7 h-7 object-contain" />
+                  <Image src={s.icon} alt={s.name} width={28} height={28} className="object-contain" unoptimized />
                   <span className="text-[11px] text-fg3 tracking-[0.06em] uppercase text-center group-hover:text-accent transition-colors duration-200 font-mono">
                     {s.name}
                   </span>
