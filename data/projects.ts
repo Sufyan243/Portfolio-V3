@@ -17,6 +17,35 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "postidea",
+    title: "PostIdea",
+    description:
+      "AI-powered spec and architecture validation platform. Runs product ideas through a 5-stage pipeline — Socratic discovery, 4-agent council review, spec generation, rules-engine architecture, and implementation verification. Catches contradictions before you write code.",
+    longDescription:
+      "PostIdea is a full-stack SaaS platform that validates product ideas and architectures before you write a single line of code. It runs ideas through a 5-stage pipeline: Socratic discovery to clarify requirements, a 4-agent council (Product, Tech, UX, Business) that debates and surfaces contradictions, spec generation with structured requirements, rules-engine architecture validation, and implementation verification. Built with FastAPI, React, PostgreSQL, Redis, and Docker. Currently in active development.",
+    category: "featured",
+    type: "fullstack",
+    techStack: ["FastAPI", "React", "PostgreSQL", "Redis", "Docker", "Groq", "Python", "TypeScript"],
+    githubUrl: "https://github.com/Sufyan243/PostIdea",
+    isPrivate: true,
+    liveUrl: "https://postidea.app",
+    screenshot: "/screenshots/postidea.png",
+    challenges: [
+      "Designing a 5-stage AI pipeline that maintains context across Socratic discovery, council debate, spec generation, architecture validation, and implementation verification",
+      "Building a 4-agent council system where Product, Tech, UX, and Business agents debate and surface contradictions in real-time",
+      "Implementing a rules-engine architecture validator that catches logical inconsistencies before code is written",
+      "Managing multi-turn AI conversations with context preservation across pipeline stages",
+      "Orchestrating async task queues with Redis for long-running AI operations",
+    ],
+    architecture: [
+      "FastAPI async backend with PostgreSQL for persistence and Redis for task queues",
+      "5-stage pipeline: Socratic discovery → 4-agent council → spec generation → rules-engine validation → implementation verification",
+      "Multi-agent system with specialized agents (Product, Tech, UX, Business) using Groq API",
+      "React frontend with real-time pipeline progress tracking",
+      "Docker containerized deployment with separate services for API, workers, and database",
+    ],
+  },
+  {
     slug: "terra-debugger",
     title: "Terra Debugger",
     description:
@@ -59,7 +88,7 @@ export const projects: Project[] = [
     techStack: ["Java 17", "Spring Boot 3.2", "React 19", "Vite", "Tailwind CSS", "Apache POI", "iText7", "Maven", "Lombok"],
     githubUrl: "https://github.com/Sufyan243/Smart-Examination-Anti-Cheating-Seating-Optimization-System",
     isPrivate: false,
-    screenshot: "/screenshots/smart-exam-seating.png",
+    screenshot: "/screenshots/Smartexaminationandcheatingoptimiztion.png",
     challenges: [
       "Implementing Graph Coloring with O(n×m) greedy strategy ensuring no same-subject adjacency across a 2D seat grid",
       "4-directional neighbor conflict detection with risk scoring (0 conflicts = SAFE, 1 = MEDIUM, 2+ = HIGH)",
@@ -118,7 +147,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Sufyan243/Expense-Voyage",
     isPrivate: false,
     liveUrl: "https://expensevoyage.webhostmost.com",
-    screenshot: "/screenshots/expense-voyage.png",
+    screenshot: "/screenshots/expense-voyage-placeholder.svg",
     challenges: [
       "Designing a normalized MySQL schema for expenses, budgets, categories, and recurring rules",
       "Building real-time Chart.js updates via AJAX without full page reloads",
@@ -145,7 +174,7 @@ export const projects: Project[] = [
     techStack: ["Python", "OpenAI API", "LangChain", "FastAPI", "FAISS", "React", "Redis"],
     githubUrl: "https://github.com/Sufyan243/AI-Chatbot",
     isPrivate: true,
-    screenshot: "/screenshots/ai-chatbot.png",
+    screenshot: "/screenshots/chatbot.png",
     challenges: [
       "Managing multi-turn conversation context without exceeding token limits",
       "Implementing semantic search for knowledge base retrieval",
@@ -172,7 +201,7 @@ export const projects: Project[] = [
     techStack: ["Node.js", "JavaScript", "GitHub Actions", "Jest", "ESLint", "Markdown"],
     githubUrl: "https://github.com/Sufyan243/Document_Assistant",
     isPrivate: false,
-    screenshot: "/screenshots/document-assistant.png",
+    screenshot: "/screenshots/document-assistant-placeholder.svg",
     challenges: [
       "Building a language-agnostic parser handling JS, Python, Java, Go, and TypeScript",
       "Extracting complexity metrics and dependency graphs without executing the code",
@@ -200,7 +229,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Sufyan243/Premium-SaaSTemplate",
     isPrivate: false,
     liveUrl: "https://premium-saa-s-temaplate.vercel.app",
-    screenshot: "/screenshots/premium-saas-template.png",
+    screenshot: "/screenshots/Saastemplate.png",
     challenges: [
       "Designing conversion-optimized sections (pricing, social proof, use-cases) that serve multiple audience types",
       "Implementing animated scroll effects that are smooth without impacting Lighthouse performance scores",
@@ -213,32 +242,6 @@ export const projects: Project[] = [
       "Vanilla JavaScript ES Modules — no framework overhead",
       "Dark mode toggle with localStorage persistence",
       "Fully responsive layout with mobile-first Tailwind utilities",
-    ],
-  },
-  {
-    slug: "leaf-greenery",
-    title: "Leaf & Greenery",
-    description:
-      "E-commerce storefront for a plant shop with product catalog, cart, checkout flow, and admin inventory management.",
-    longDescription:
-      "A full-featured e-commerce platform built for a plant and greenery shop. Customers browse a categorized product catalog, add items to cart, and complete checkout. An admin panel handles inventory, orders, and product management. README and full details will be added soon.",
-    category: "secondary",
-    type: "backend",
-    techStack: ["PHP", "MySQL", "JavaScript", "Bootstrap", "CSS"],
-    githubUrl: "https://github.com/Sufyan243/Leaf-Greenery-master",
-    isPrivate: false,
-    screenshot: "/screenshots/leaf-greenery.png",
-    challenges: [
-      "Building a session-based cart that persists across page navigations",
-      "Designing a product catalog with category filtering and search",
-      "Implementing an admin panel for inventory and order management",
-      "Handling checkout flow with order confirmation and stock updates",
-    ],
-    architecture: [
-      "PHP MVC with front-controller routing",
-      "MySQL schema — products, categories, orders, order_items, users",
-      "Session-based cart with server-side persistence",
-      "Admin panel with CRUD for products and order status management",
     ],
   },
 ];

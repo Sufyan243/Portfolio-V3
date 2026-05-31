@@ -10,9 +10,9 @@ export default function ProjectCard({ project }: { project: Project }) {
   const remaining = project.techStack.length - 3;
 
   return (
-    <div className="group relative bg-surface flex flex-col cursor-pointer overflow-hidden hover:bg-bg2 transition-colors duration-200">
+    <div className="group relative bg-surface flex flex-col cursor-pointer overflow-hidden hover:bg-bg2 transition-colors duration-200 border border-border h-full">
       {/* Screenshot */}
-      <div className="aspect-[16/10] relative overflow-hidden bg-bg3">
+      <div className="aspect-[16/10] relative overflow-hidden bg-bg3 flex-shrink-0">
         {project.screenshot ? (
           <Image
             src={project.screenshot}
@@ -44,53 +44,57 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* Body */}
-      <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] mb-2 text-fg">
-          {project.title}
-        </h3>
-        <p className="text-[12px] text-fg2 mb-4 leading-[1.75] flex-1">{project.description}</p>
-
-        <div className="flex flex-wrap gap-[5px] mb-5">
-          {displayTechs.map((tech) => (
-            <TechBadge key={tech} label={tech} />
-          ))}
-          {remaining > 0 && (
-            <span className="text-[10px] text-fg3 self-center">+{remaining}</span>
-          )}
+      <div className="p-6 flex flex-col flex-1 justify-between">
+        <div>
+          <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] mb-2 text-fg">
+            {project.title}
+          </h3>
+          <p className="text-[12px] text-fg2 mb-4 leading-[1.75] line-clamp-3">{project.description}</p>
         </div>
 
-        <div className="flex items-center gap-4">
-          {project.githubUrl && (
-            <a
-              href={project.isPrivate ? undefined : project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => { if (project.isPrivate) e.preventDefault(); e.stopPropagation(); }}
-              className="text-[11px] text-fg3 tracking-[0.08em] uppercase hover:text-fg transition-colors"
+        <div>
+          <div className="flex flex-wrap gap-[5px] mb-5">
+            {displayTechs.map((tech) => (
+              <TechBadge key={tech} label={tech} />
+            ))}
+            {remaining > 0 && (
+              <span className="text-[10px] text-fg3 self-center">+{remaining}</span>
+            )}
+          </div>
+
+          <div className="flex items-center gap-4">
+            {project.githubUrl && (
+              <a
+                href={project.isPrivate ? undefined : project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => { if (project.isPrivate) e.preventDefault(); e.stopPropagation(); }}
+                className="text-[11px] text-fg3 tracking-[0.08em] uppercase hover:text-fg transition-colors"
+              >
+                {project.isPrivate ? "Private ↗" : "GitHub ↗"}
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-[11px] text-fg3 tracking-[0.08em] uppercase hover:text-fg transition-colors"
+              >
+                Live ↗
+              </a>
+            )}
+            <Link
+              href={`/projects/${project.slug}`}
+              className="text-[11px] text-accent tracking-[0.08em] uppercase ml-auto flex items-center gap-1 group-hover:gap-2 transition-all duration-200"
             >
-              {project.isPrivate ? "Private ↗" : "GitHub ↗"}
-            </a>
-          )}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="text-[11px] text-fg3 tracking-[0.08em] uppercase hover:text-fg transition-colors"
-            >
-              Live ↗
-            </a>
-          )}
-          <Link
-            href={`/projects/${project.slug}`}
-            className="text-[11px] text-accent tracking-[0.08em] uppercase ml-auto flex items-center gap-1 group-hover:gap-2 transition-all duration-200"
-          >
-            View project
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-              <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          </Link>
+              View project
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
 

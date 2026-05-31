@@ -12,7 +12,6 @@ export default function Navbar() {
           {[
             { label: "Stack", href: "/#stack" },
             { label: "Projects", href: "/#projects" },
-            { label: "Testimonials", href: "/#testimonials" },
             { label: "FAQs", href: "/#faq" },
           ].map((link) => (
             <a

@@ -40,7 +40,7 @@ export default function ProjectsPage() {
             <h2 className="font-display text-[22px] font-semibold tracking-[-0.02em] mb-6 text-fg">
               Featured
             </h2>
-            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border border border-border">
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <AnimatePresence>
                 {featured.map((project) => (
                   <motion.div
@@ -50,6 +50,7 @@ export default function ProjectsPage() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.25 }}
+                    className="h-full"
                   >
                     <ProjectCard project={project} />
                   </motion.div>
@@ -64,7 +65,7 @@ export default function ProjectsPage() {
             <h2 className="font-display text-[22px] font-semibold tracking-[-0.02em] mb-6 text-fg">
               More Projects
             </h2>
-            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border border border-border">
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <AnimatePresence>
                 {secondary.map((project) => (
                   <motion.div
@@ -74,6 +75,7 @@ export default function ProjectsPage() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.25 }}
+                    className="h-full"
                   >
                     <ProjectCard project={project} />
                   </motion.div>

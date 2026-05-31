@@ -5,24 +5,24 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Syed Muhammad Sufyan — Backend Engineer",
+    default: "Syed Muhammad Sufyan — Full Stack Developer & SaaS Builder",
     template: "%s | Sufyan",
   },
   description:
-    "Backend Engineer specializing in scalable systems, AI integration, and full-stack development. Building robust solutions with Java, PHP, Python, and modern web technologies.",
+    "Full Stack Developer building real SaaS products. Shipped Terra Debugger, currently building PostIdea. FastAPI, React, Spring Boot, AI integrations. Based in Karachi.",
   openGraph: {
     type: "website",
     url: "https://sufyan.dev",
     siteName: "Sufyan Portfolio",
-    title: "Syed Muhammad Sufyan — Backend Engineer",
+    title: "Syed Muhammad Sufyan — Full Stack Developer & SaaS Builder",
     description:
-      "Backend Engineer specializing in scalable systems, AI integration, and full-stack development.",
+      "Full Stack Developer building real SaaS products. Shipped Terra Debugger, currently building PostIdea. FastAPI, React, Spring Boot, AI integrations. Based in Karachi.",
     images: [{ url: "/socail-media-banner.png", width: 1200, height: 630, alt: "Sufyan Portfolio" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Syed Muhammad Sufyan — Backend Engineer",
-    description: "Backend Engineer specializing in scalable systems, AI integration, and full-stack development.",
+    title: "Syed Muhammad Sufyan — Full Stack Developer & SaaS Builder",
+    description: "Full Stack Developer building real SaaS products. Shipped Terra Debugger, currently building PostIdea. FastAPI, React, Spring Boot, AI integrations. Based in Karachi.",
   },
   icons: { icon: "/favicon.ico" },
 };
