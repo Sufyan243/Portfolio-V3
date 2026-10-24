@@ -144,7 +144,7 @@ export default function Home() {
                   View Work
                 </a>
                 <a
-                  href="/Resume.pdf"
+                  href="/Sufyan_Resume.pdf"
                   download
                   className="px-[30px] py-[13px] border border-border2 text-fg text-[12px] tracking-[0.06em] uppercase hover:border-fg2 transition-colors rounded-[3px] font-mono"
                 >
